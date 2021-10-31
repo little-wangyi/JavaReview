@@ -2,10 +2,11 @@ package Collection_;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class Arraylist01 {
     public static void main(String[] args) {
-        Collection list = new ArrayList();
+        List list = new ArrayList();
         //add
         //add内部添加的是object
         list.add("jack");
@@ -41,5 +42,11 @@ public class Arraylist01 {
         //removeAll
         list.removeAll(list2);
         System.out.println("list:"+list);
+
+
+        list.add("fin");
+        //subList 输出[0,1)的数组
+        List list1 = list.subList(0, 1);
+        System.out.println("list1 : " + list1);
     }
 }
