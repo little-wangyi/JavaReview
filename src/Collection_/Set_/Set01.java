@@ -8,12 +8,15 @@ public class Set01 {
     public static void main(String[] args) {
         Set hashSet = new HashSet();
         //插入无序
+        //而且插入会有bool返回值
         hashSet.add("1");
         hashSet.add("ads");
         hashSet.add("ddd");
         hashSet.add("ccc");
         hashSet.add("bbb");
         hashSet.add(null);
+        System.out.println(hashSet.add(null));
+
         //但是输出是相同的
         System.out.println(hashSet);
 
@@ -29,5 +32,8 @@ public class Set01 {
             Object next = iterator.next();
             System.out.println(next);
         }
+        //若要移除可用remove方法
+        hashSet.remove("ddd");
+        System.out.println(hashSet);
     }
 }
