@@ -1,6 +1,6 @@
 package Threads_;
 
-public class TicketTest {
+public class ThreadSyn {
     public static void main(String[] args) {
         Ticket1 ticket1 = new Ticket1();
         new Thread(ticket1).start();
