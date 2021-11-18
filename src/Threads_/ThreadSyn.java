@@ -14,6 +14,8 @@ class Ticket1 implements Runnable {
     private boolean loop = true;
 
     private synchronized void sell() {
+        //也可以同步代码块，不同步方法，效果相同
+        // synchronized(this){
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {
@@ -26,8 +28,18 @@ class Ticket1 implements Runnable {
             loop = false;
             return;
         }
+//    }
+    }
+    //但是若要同步静态方法，需要在类上加锁
+    private static void m1(){
+
     }
 
+    private static void m2(){
+        synchronized (Ticket1.class){
+
+        }
+    }
     @Override
     public void run() {
         while (loop) {
